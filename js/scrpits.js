@@ -309,10 +309,9 @@ fetch("audios.json").then(response => response.json()).then(audios => {
   resacosos.addEventListener("click", () => {
     main.innerHTML = "";
   });
-  var fary = document.querySelector("body > main > div:nth-child(4) > div");
+  var fary = document.querySelector("body > main > div:nth-child(1) > div:nth-child(1)");
   fary.addEventListener("click", () => {
     main.innerHTML = "";
   });
-  
   
 });
