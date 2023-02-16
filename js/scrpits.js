@@ -296,4 +296,21 @@ fetch("audios.json").then(response => response.json()).then(audios => {
       main.appendChild(intro);
     }
   });
+
+  var duki = document.querySelector("body > main > div:nth-child(2) > div:nth-child(2)");
+  duki.addEventListener("click", () => {
+    main.innerHTML = "";
+  });
+  var banger = document.querySelector("body > main > div:nth-child(2) > div");
+  banger.addEventListener("click", () => {
+    main.innerHTML = "";
+  });
+  var resacosos = document.querySelector("body > main > div:nth-child(1) > div:nth-child(2)");
+  resacosos.addEventListener("click", () => {
+    main.innerHTML = "";
+  });
+  var fary = document.querySelector("body > main > div:nth-child(4) > div");
+  fary.addEventListener("click", () => {
+    main.innerHTML = "";
+  }); 
 });
