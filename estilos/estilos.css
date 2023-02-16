@@ -119,27 +119,28 @@
   }
   .container-flex {
     display: flex;
-    flex-flow: row wrap;
+    /* flex-flow: row wrap;
     margin: 0 auto;
     justify-content: flex-start;
-    align-items: center;
+    align-items: center; */
   }
   .container-flex .toplist a {
     justify-content: center;
   }
   .music-card {
     padding-bottom: 30px;
+    padding-top: 30px;
     width: 50%;
   }
   .music-card img {
     margin-left: 10px;
-    padding-left: 10px;
     max-width: 100%;
   }
   .music-card p {
     font-size: 12px;
     font-weight: bold;
     padding-top: 10px;
+    color: white;
   }
   
   /* FOOTER */
@@ -156,7 +157,7 @@
     color: grey;
   }
   footer i {
-    padding: 20px 20px 0 0;
+    padding: 15px 5px 5px 5px;
     font-size: 18px;
   }
   
@@ -193,4 +194,22 @@
       font-size: 10px;
     }
   }
+
+  input[type=range] {
+    max-width: 65%;
+    display: inline;
+}
+
+.flex{
+  display: flex;
   
+}
+
+/* .divdelcentro{
+  margin-right: 50px;
+} */
+
+
+.title{
+  color: white;
+}
