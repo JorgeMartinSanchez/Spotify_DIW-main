@@ -47,7 +47,7 @@
 // function reproducir(){
 //     if(tema.paused){
 //         tema.play();
-        
+
 //         tema.addEventListener("timeupdate", ()=>{
 //             document.querySelector("#barra").value=tema.currentTime;
 //             barra.max=tema.duration;
@@ -271,19 +271,29 @@
 
 var audiosHTML;
 var main = document.getElementsByTagName("main")[0];
-console.log(main);
-fetch("audios.json").then(response=>response.json()).then(audios=>{
-    console.log(audios);
-    audios.forEach(audio => {
-        audiosHTML = `
-    </div>
-      <div class=" container-flex text-center col-12">
+let intro;
+let cartas = document.createElement("span");
+let carta = "";
+let cont = 0;
+fetch("audios.json").then(response => response.json()).then(audios => {
+  audios.forEach(audio => {
+    cont++;
+    if (cont == 1 || cont == 3) {
+      intro = document.createElement("div");
+      intro.classList.add("container-flex");
+      intro.classList.add("text-center");
+      intro.classList.add("col-12");
+    }
+    carta = document.createTextNode(`
         <div class="music-card col-6">
-          <a id="fary" href="#"><img src="${audio.imagen}" alt=""></a>
+          <a id="enlace" href="#"><img src="${audio.imagen}" alt=""></a>
           <p>${audio.artista} - ${audio.nombre}</p>
-        </div>
-      </div>
-        `;
-        main.insertAdjacentHTML("afterbegin", audiosHTML);
-    });
+        </div>`);
+    cartas.appendChild(carta);
+    if(cont == 2 || cont == 4){
+      intro.innerHTML=cartas.textContent;
+      cartas.innerHTML="";
+      main.appendChild(intro);
+    }
+  });
 });
