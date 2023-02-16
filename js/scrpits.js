@@ -312,5 +312,7 @@ fetch("audios.json").then(response => response.json()).then(audios => {
   var fary = document.querySelector("body > main > div:nth-child(4) > div");
   fary.addEventListener("click", () => {
     main.innerHTML = "";
-  }); 
+  });
+  
+  
 });

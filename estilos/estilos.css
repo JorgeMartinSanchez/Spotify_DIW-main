@@ -157,7 +157,7 @@
     color: grey;
   }
   footer i {
-    padding: 15px 5px 5px 5px;
+    padding: 25px 5px 5px 5px;
     font-size: 18px;
   }
   
@@ -196,7 +196,8 @@
   }
 
   input[type=range] {
-    max-width: 65%;
+    max-width: 25%;
+    margin-top: 10px;
     display: inline;
 }
 
