@@ -297,21 +297,48 @@ fetch("audios.json").then(response => response.json()).then(audios => {
     }
   });
 
-  var duki = document.querySelector("body > main > div:nth-child(2) > div:nth-child(2)");
-  duki.addEventListener("click", () => {
-    main.innerHTML = "";
-  });
-  var banger = document.querySelector("body > main > div:nth-child(2) > div");
-  banger.addEventListener("click", () => {
-    main.innerHTML = "";
-  });
-  var resacosos = document.querySelector("body > main > div:nth-child(1) > div:nth-child(2)");
-  resacosos.addEventListener("click", () => {
-    main.innerHTML = "";
-  });
+  // Disco Fary 
   var fary = document.querySelector("body > main > div:nth-child(1) > div:nth-child(1)");
   fary.addEventListener("click", () => {
     main.innerHTML = "";
   });
-  
+  var faryMenu = document.querySelector("body > aside > div.menulink > a:nth-child(2) > span");
+  faryMenu.addEventListener("click", () => {
+    main.innerHTML = "";
+    faryMenu.style.color = "white";
+  });
+
+  // Disco Resacosos
+  var resacosos = document.querySelector("body > main > div:nth-child(1) > div:nth-child(2)");
+  resacosos.addEventListener("click", () => {
+    main.innerHTML = "";
+  });
+  var resacososMenu = document.querySelector("body > aside > div.menulink > a:nth-child(3) > span");
+  resacososMenu.addEventListener("click", () => {
+    main.innerHTML = "";
+    resacososMenu.style.color = "white";
+  });
+
+  // Disco Banger
+  var banger = document.querySelector("body > main > div:nth-child(2) > div");
+  banger.addEventListener("click", () => {
+    main.innerHTML = "";
+  });
+  var bangerMenu = document.querySelector("body > aside > div.menulink > a:nth-child(4) > span");
+  bangerMenu.addEventListener("click", () => {
+    main.innerHTML = "";
+    bangerMenu.style.color = "white";
+  });
+
+  // Disco Fary
+  var duki = document.querySelector("body > main > div:nth-child(2) > div:nth-child(2)");
+  duki.addEventListener("click", () => {
+    main.innerHTML = "";
+  });
+  var dukiMenu = document.querySelector("body > aside > div.menulink > a:nth-child(5) > span");
+  dukiMenu.addEventListener("click", () => {
+    main.innerHTML = "";
+    dukiMenu.style.color = "white";
+  });
+
 });
