@@ -70,6 +70,7 @@
     },
     
 
+   
     {
         "nombre": "Resacosos",
         "artista": "Super merk-2",
@@ -77,60 +78,61 @@
         "canciones":[
             {
                 "nombre":"La Resaka",
-                "audio":"",
+                "audio":"./Supermerk2/La Resaka.mp3",
                 "duracion":"3:35",
                 "artistas":"Super merk-2"
             },
             {
                 "nombre":"Que Calor",
-                "audio":"",
+                "audio":"./Supermerk2/Que Calor.mp3",
                 "duracion":"4:05",
                 "artistas":"Super merk-2"
             },
             {
                 "nombre":"La Lata",
-                "audio":"",
-                "duracion":"3:31",
+                "audio":"./Supermerk2/La Lata.mp3",
+                "duracion":"3:35",
                 "artistas":"Super merk-2"
             },
             {
                 "nombre":"Nunca Sabrás",
-                "audio":"",
-                "duracion":"3:53",
+                "audio":"./Supermerk2/Nunca Sabras.mp3",
+                "duracion":"3:48",
                 "artistas":"Super merk-2"
             },
             {
                 "nombre":"El Fogón",
-                "audio":"",
-                "duracion":"2:51",
+                "audio":"./Supermerk2/El Fogon.mp3",
+                "duracion":"2:49",
                 "artistas":"Super merk-2"
             },
             {
                 "nombre":"Culo Pa 2 Tangas",
-                "audio":"",
+                "audio":"./Supermerk2/Culo pa 2 tangas.mp3",
                 "duracion":"3:23",
-                "artistas":"Super merk-2"
+                "artistas":"Super merk-2, El Pepo"
             },
             {
                 "nombre":"En La Cara Me Pega El Sol",
-                "audio":"",
+                "audio":"./Supermerk2/En La Cara Me Pega El Sol.mp3",
                 "duracion":"3:48",
                 "artistas":"Super merk-2"
             },
             {
                 "nombre":"Persecuta(Remix)",
-                "audio":"",
+                "audio":"./Supermerk2/Persecuta (REMIX).mp3",
                 "duracion":"3:20",
-                "artistas":"Super merk-2"
+                "artistas":"Super merk-2, El Pepo, El Mudo, Sound de Barrio"
             },
             {
                 "nombre":"Mulo Raro",
-                "audio":"",
+                "audio":"./Supermerk2/Mulo Raro.mp3",
                 "duracion":"4:49",
                 "artistas":"Super merk-2"
             }
         ]
     },
+
 
 
     {

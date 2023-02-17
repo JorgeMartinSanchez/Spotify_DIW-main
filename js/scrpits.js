@@ -3,13 +3,9 @@ let tema = document.querySelector("#cancion");
 
 //TO-DO: CAMBIAR DISEÑO AL PONER BOTÓN ALEATORIO ACTIVO O INACTIVO
 //TO-DO: CAMBIAR DISEÑO AL PONER BOTÓN REPETIR ACTIVO O INACTIVO
-//TO-DO: REVISAR SI SE ACTIVA REPITIENDO DESACTIVAR REPRODUCCION ALEATORIA Y VICEVERSA
-//TO-DO: PODER CAMBIAR DE UN DISCO A OTRO
 //TO-DO: PODER IR CAMBIANDO CON EL MENÚ LATERAL
 //TO-DO: AÑADIR CANCIONES SUPER MERK-2
 //TO-DO: CANCIONES DUKI NO CARGAN
-//TO-DO: CARGAR EL MAIN AL PULSAR INICIO
-
 
 tema.volume = 0.5;
 let posicion = 0;
@@ -147,6 +143,7 @@ function reproducir(){
   cargarCancion(posicion);
   if(tema.paused){
       tema.play();
+      boton_play.className= "fas fa-pause-circle";
       tema.addEventListener("timeupdate", () => {
         barra.value = tema.currentTime;
         barra.max = tema.duration;
@@ -155,6 +152,7 @@ function reproducir(){
   }
   else{
       tema.pause();
+      boton_play.className= "fas fa-play-circle";
   }
 }
 
@@ -210,7 +208,6 @@ function repetir () {
       repitiendo = true;
       randomOn = false;
   }
-  console.log(repitiendo);
 }
 
 function cargarCancion(i){
@@ -226,4 +223,3 @@ function aleatorio () {
       repitiendo = false;
   }
 }
-
