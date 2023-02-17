@@ -9,89 +9,104 @@ let tema = document.querySelector("#cancion");
 //TO-DO: AÑADIR CANCIONES SUPER MERK-2
 //TO-DO: CANCIONES DUKI NO CARGAN
 //TO-DO: CARGAR EL MAIN AL PULSAR INICIO
+
+
 tema.volume = 0.5;
 let posicion = 0;
 let repitiendo = false;
 let randomOn = false;
 let canciones;
+var main = document.getElementsByTagName("main")[0];
 
 window.addEventListener("load", () => {
-    var main = document.getElementsByTagName("main")[0];
-    let intro;
-    let cartas;
-    let carta = "";
-    let cont = 0;
-    fetch("audios.json").then(response => response.json()).then(audios => {
-      audios.forEach(audio => {
-        cont++;
-        if (cont == 1 || cont == 3) {
-          intro = document.createElement("div");
-          intro.classList.add("container-flex");
-          intro.classList.add("text-center");
-          intro.classList.add("col-12");
-        }
-        carta = document.createElement("div");
-        carta.classList.add("music-card");
-        carta.classList.add("col-6");
-        carta.setAttribute("id", "carta");
-        let enlace = document.createElement("a");
-        enlace.setAttribute("id", "enlace");
-        enlace.setAttribute("href", "#");
-        let imagen = document.createElement("img");
-        imagen.setAttribute("src", audio.imagen);
-        let parrafo = document.createElement("p");
-        parrafo.innerHTML=audio.artista + " - " + audio.nombre;
-      
-        enlace.appendChild(imagen);
+   
+   crearMain();
 
-        carta.appendChild(enlace);
-        carta.appendChild(parrafo);
-        intro.appendChild(carta);
-        if (cont == 2 || cont == 4) {
-          main.appendChild(intro);
-        }
-      });
+   var inicio = document.querySelector("body > aside > div.menulink > a:nth-child(1)");
 
-      var discos = document.getElementsByClassName("music-card");
-      for (let i = 0; i < discos.length; i++)  {
-        
-        discos[i].addEventListener("click", ()=>{
-          main.innerHTML="";
-          var album = `
-            <div class = "albumes">
-              <div class="album">
-                  <img src="${audios[i].imagen}" alt="">
-                  <h1>${audios[i].nombre}</h1>
-                  <h3>${audios[i].artista}</h3>
-              </div>
-              <div class="cancion">
-                <ol>`;
+   inicio.addEventListener("click", () => {
+      main.innerHTML = "";
+      crearMain();
+   });
+});
 
-              audios[i].canciones.forEach(audio => {
-                album += ` <li class="canciones" id="${audio.audio}">${audio.nombre}</li>`;
-              });
 
-              album += `
-                </ol>
-              </div>
-            </div>
-          `;
-          main.innerHTML = album;
+function crearMain () {
+  let intro;
+  let cartas;
+  let carta = "";
+  let cont = 0;
+  fetch("audios.json").then(response => response.json()).then(audios => {
+    audios.forEach(audio => {
+      cont++;
+      if (cont == 1 || cont == 3) {
+        intro = document.createElement("div");
+        intro.classList.add("container-flex");
+        intro.classList.add("text-center");
+        intro.classList.add("col-12");
+      }
+      carta = document.createElement("div");
+      carta.classList.add("music-card");
+      carta.classList.add("col-6");
+      carta.setAttribute("id", "carta");
+      let enlace = document.createElement("a");
+      enlace.setAttribute("id", "enlace");
+      enlace.setAttribute("href", "#");
+      let imagen = document.createElement("img");
+      imagen.setAttribute("src", audio.imagen);
+      let parrafo = document.createElement("p");
+      parrafo.innerHTML=audio.artista + " - " + audio.nombre;
+    
+      enlace.appendChild(imagen);
 
-          canciones = document.getElementsByClassName("canciones");
-          for(let j = 0; j < canciones.length; j++) {
-            canciones[j].addEventListener("click", () => {
-              let tema = document.querySelector("#cancion");
-              tema.src = canciones[j].id;
-              posicion = j; 
-              cargarCancion(j);
-              reproducir();        
-            });
-          }
-        });   
+      carta.appendChild(enlace);
+      carta.appendChild(parrafo);
+      intro.appendChild(carta);
+      if (cont == 2 || cont == 4) {
+        main.appendChild(intro);
       }
     });
-});
+
+    var discos = document.getElementsByClassName("music-card");
+    for (let i = 0; i < discos.length; i++)  {
+      
+      discos[i].addEventListener("click", ()=>{
+        main.innerHTML="";
+        var album = `
+          <div class = "albumes">
+            <div class="album">
+                <img src="${audios[i].imagen}" alt="">
+                <h1>${audios[i].nombre}</h1>
+                <h3>${audios[i].artista}</h3>
+            </div>
+            <div class="cancion">
+              <ol>`;
+
+            audios[i].canciones.forEach(audio => {
+              album += ` <li class="canciones" id="${audio.audio}">${audio.nombre}</li>`;
+            });
+
+            album += `
+              </ol>
+            </div>
+          </div>
+        `;
+        main.innerHTML = album;
+
+        canciones = document.getElementsByClassName("canciones");
+        for(let j = 0; j < canciones.length; j++) {
+          canciones[j].addEventListener("click", () => {
+            let tema = document.querySelector("#cancion");
+            tema.src = canciones[j].id;
+            posicion = j; 
+            cargarCancion(j);
+            reproducir();        
+          });
+        }
+      });   
+    }
+  });
+}
 
 //CONTROLES AUDIO
 document.querySelector("#aleatorio").addEventListener("click",aleatorio);
@@ -211,3 +226,4 @@ function aleatorio () {
       repitiendo = false;
   }
 }
+
