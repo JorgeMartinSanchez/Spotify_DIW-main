@@ -235,10 +235,8 @@ function repetir() {
   }
 }
 
-function cargarCancion(i) {
-
-  document.querySelector("#nombreCancion").innerHTML =
-    canciones[i].innerHTML;
+function cargarCancion(i){
+  document.querySelector("#nombreCancion").innerHTML = (i + 1) + ". " + canciones[i].innerHTML;
 }
 
 function aleatorio() {
